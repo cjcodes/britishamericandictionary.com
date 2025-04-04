@@ -11,9 +11,6 @@ importers:
       airtable:
         specifier: ^0.12.2
         version: 0.12.2
-      daisyui:
-        specifier: ^5.0.12
-        version: 5.0.12
     devDependencies:
       '@eslint/compat':
         specifier: ^1.2.5
@@ -36,6 +33,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.0.0
         version: 4.1.2(vite@6.2.5(jiti@2.4.2)(lightningcss@1.29.2))
+      daisyui:
+        specifier: ^5.0.12
+        version: 5.0.12
       eslint:
         specifier: ^9.18.0
         version: 9.23.0(jiti@2.4.2)
