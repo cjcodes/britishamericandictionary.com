@@ -1,12 +1,17 @@
 import type { Actions, PageServerLoad } from './[base]/$types';
 import crypto from 'node:crypto';
 import { addRecord, getRecords } from '$lib';
+import { env } from '$env/dynamic/private';
 
 export type DataType = {
 	[category: string]: [British?: string, American?: string][];
 };
 
-export const load: PageServerLoad = async () => {
+export const load: PageServerLoad = async ({ setHeaders }) => {
+	setHeaders({
+		'cache-control': 'max-age=' + env.CACHE_DURATION_IN_SEC
+	});
+
 	return await getRecords();
 };
 
