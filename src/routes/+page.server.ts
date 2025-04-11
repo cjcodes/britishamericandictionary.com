@@ -29,7 +29,7 @@ export const actions = {
 				American: data.get('american')?.toString() || ''
 			});
 			if (platform?.context) {
-				platform.context.waitUntil(add);
+				platform.context.waitUntil(await add);
 			}
 		}
 
