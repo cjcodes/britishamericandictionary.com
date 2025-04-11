@@ -4,15 +4,15 @@ import { addRecord, getRecords } from '$lib';
 import { env } from '$env/dynamic/private';
 
 export type DataType = {
-	[category: string]: [British?: string, American?: string][];
+	[category: string]: [British: string, American: string][];
 };
 
-export const load: PageServerLoad = async ({ setHeaders }) => {
+export const load: PageServerLoad = ({ setHeaders }) => {
 	setHeaders({
 		'cache-control': 'max-age=' + env.CACHE_DURATION_IN_SEC
 	});
 
-	return await getRecords();
+	return getRecords();
 };
 
 export const actions = {
