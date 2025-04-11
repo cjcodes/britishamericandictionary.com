@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<svg
+  height="24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="xMidYMid meet"
+  viewBox="0 0 200 200"
+>
+  <polygon points="0,0 0,200 100,100" style="fill:#0c2547;" />
+  <polygon points="200,0 200,200 100,100" style="fill:#d1261e;" />
+</svg>

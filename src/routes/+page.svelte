@@ -100,6 +100,10 @@
 		class="btn btn-lg btn-primary absolute -top-12 -right-8 z-10 h-12 w-12 rounded-full"
 		onclick={focusSubmit}>+</button
 	> -->
+	<h1 class="text-4xl font-extrabold">
+		British <img src="./icon.svg" width="24" height="24" class="inline align-baseline" alt="><" />
+		American Dictionary
+	</h1>
 	<div class="w-full px-4 md:px-0">
 		<label class="input w-full">
 			<input
