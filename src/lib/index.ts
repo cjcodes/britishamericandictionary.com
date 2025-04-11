@@ -10,7 +10,7 @@ export function getRecords(): DataType {
 }
 
 export async function addRecord(record: { British: string; American: string }) {
-	base(env.AIRTABLE_TABLE_ID).create([
+	return base(env.AIRTABLE_TABLE_ID).create([
 		{
 			fields: {
 				...record
