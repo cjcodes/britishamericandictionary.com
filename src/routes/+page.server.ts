@@ -16,7 +16,7 @@ export const load: PageServerLoad = ({ setHeaders }) => {
 };
 
 export const actions = {
-	default: async ({ request }) => {
+	default: async ({ request, platform }) => {
 		const data = await request.formData();
 		const browser = request.headers.get('user-agent') || '';
 		const toHash = browser + data.get('british') + data.get('american');
@@ -24,10 +24,13 @@ export const actions = {
 		const hash = crypto.createHash('sha1').update(toHash).digest('hex');
 
 		if (hash === data.get('key')) {
-			addRecord({
+			const add = addRecord({
 				British: data.get('british')?.toString() || '',
 				American: data.get('american')?.toString() || ''
 			});
+			if (platform?.context) {
+				platform.context.waitUntil(add);
+			}
 		}
 
 		return { success: true };
