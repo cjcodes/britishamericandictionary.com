@@ -73,7 +73,6 @@
 
 			await tick(); // Wait for the hidden field to update
 			(e.target as HTMLFormElement).submit();
-		} else {
 		}
 	}
 
@@ -136,14 +135,14 @@
 					></th>
 				</tr>
 			</thead>
-			{#each Object.entries(sorted) as [category, categoryEntries]}
+			{#each Object.entries(sorted) as [category, categoryEntries] (category)}
 				<thead>
 					<tr>
 						<th colspan="2" class="bg-base-200 py-1">{category}</th>
 					</tr>
 				</thead>
 				<tbody>
-					{#each categoryEntries as entry}
+					{#each categoryEntries as entry (`${entry[0]}-${entry[1]}`)}
 						<tr class="hover:bg-sky-100 hover:text-black">
 							<td>{entry[order[0]]}</td>
 							<td>{entry[order[1]]}</td>

@@ -1,4 +1,4 @@
-import type { Actions, PageServerLoad } from './[base]/$types';
+import type { Actions, PageServerLoad } from './$types';
 import crypto from 'node:crypto';
 import { addRecord, getRecords } from '$lib';
 import { env } from '$env/dynamic/private';
